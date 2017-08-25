@@ -7,11 +7,11 @@ public class ThingInOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-@ManyToOne
+    @ManyToOne
     private Thing thing;
-@ManyToOne
+    @ManyToOne
     private Order order;
-private int quantity;
+    private int quantity;
 
     public long getId() {
         return id;
