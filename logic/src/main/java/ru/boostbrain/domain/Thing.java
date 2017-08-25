@@ -1,9 +1,7 @@
-package domain;
+package ru.boostbrain.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Thing {
@@ -12,6 +10,17 @@ public class Thing {
     private long id;
     private String name;
     private int price;
+
+    @OneToMany
+    private List<ThingInOrder>thingInOrders;
+
+    public List<ThingInOrder> getThingInOrders() {
+        return thingInOrders;
+    }
+
+    public void setThingInOrders(List<ThingInOrder> thingInOrders) {
+        this.thingInOrders = thingInOrders;
+    }
 
     public long getId() {
         return id;
