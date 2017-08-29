@@ -9,6 +9,7 @@ import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 @Named
@@ -63,4 +64,19 @@ public class OrderBean implements Serializable {
     public List<Thing> getThings(){
         return thingManagerBean.getThings();
     }
+
+    public void addThing(Thing thing){
+
+        if(order==null){
+            return;
+        }
+        ordersManagerBean.addToOrder(thing.getId(),order.getId(),1);
+    }
+    public List<Thing> getThingInOrder(){
+        if(order==null){
+            return Collections.emptyList();
+        }
+      return   ordersManagerBean.getThingsInOrder(order.getId());
+    }
+
 }

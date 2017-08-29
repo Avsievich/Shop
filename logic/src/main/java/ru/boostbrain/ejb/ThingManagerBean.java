@@ -25,6 +25,7 @@ public class ThingManagerBean {
     public List<Thing> getThings(){
    //     TypedQuery<Thing> query= entityManager.createQuery();
 
-       return  query.getResultList();
+        return null;
+       //return  query.getResultList();
   }
 }

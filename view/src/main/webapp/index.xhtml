@@ -9,10 +9,7 @@
 <h:head> Shop</h:head>
 
 <h:body>
-
     <h:form>
-
-
         <table>
             <tr>
                 <td><h:inputText value="#{orderBean.name}"/></td>
@@ -28,14 +25,32 @@
                     <h:commandButton value="Создать товар" action="#{orderBean.createThing}"/>
                 </td>
                 <td>
-                    <h:commandButton value="Создать заказ" action="#{orderBean.createOrder}" />
+                    <h:commandButton value="Создать заказ" action="#{orderBean.createOrder}"/>
                 </td>
 
             </tr>
         </table>
-
+        <h:dataTable value="#{orderBean.things}" var="thing">
+        <h:column>
+            <h:outputText value="#{orderBean.name}"/>
+        </h:column>
+        <h:column>
+            <h:outputText value="#{orderBean.quantity}"/>
+        </h:column>
+        <h:column>
+            <h:commandButton value="Добавить" action="#{orderBean.addThing(thing)}"/>
+        </h:column>
+        </h:dataTable>
     </h:form>
+    <h:dataTable value="#{orderBean.thingInOrder}" var="thing">
+        <h:column>
+            <h:outputText value="#{orderBean.name}"/>
+        </h:column>
+        <h:column>
+            <h:outputText value="#{orderBean.quantity}"/>
+        </h:column>
 
+    </h:dataTable>
 
 </h:body>
 

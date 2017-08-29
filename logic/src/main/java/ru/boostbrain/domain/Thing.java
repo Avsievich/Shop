@@ -10,8 +10,17 @@ public class Thing {
     private long id;
     private String name;
     private int price;
+    private int quantity;
 
-    @OneToMany
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    @OneToMany (mappedBy = "thing")
     private List<ThingInOrder>thingInOrders;
 
     public List<ThingInOrder> getThingInOrders() {
