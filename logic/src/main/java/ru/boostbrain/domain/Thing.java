@@ -20,7 +20,7 @@ public class Thing {
         this.quantity = quantity;
     }
 
-    @OneToMany (mappedBy = "thing")
+    @OneToMany (fetch = FetchType.EAGER, mappedBy = "thing")
     private List<ThingInOrder>thingInOrders;
 
     public List<ThingInOrder> getThingInOrders() {

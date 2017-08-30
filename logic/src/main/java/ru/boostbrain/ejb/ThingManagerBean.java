@@ -1,5 +1,6 @@
 package ru.boostbrain.ejb;
 
+
 import ru.boostbrain.domain.Thing;
 
 import javax.ejb.LocalBean;
@@ -23,9 +24,10 @@ public class ThingManagerBean {
         return thing;
     }
     public List<Thing> getThings(){
-   //     TypedQuery<Thing> query= entityManager.createQuery();
 
-        return null;
-       //return  query.getResultList();
+
+      TypedQuery<Thing> query;
+        query = entityManager.createQuery("select c from Thing c",Thing.class);
+        return  query.getResultList();
   }
 }

@@ -30,24 +30,24 @@
 
             </tr>
         </table>
-        <h:dataTable value="#{orderBean.things}" var="thing">
+        <h:dataTable value="#{orderBean.things}" var="product">
         <h:column>
-            <h:outputText value="#{orderBean.name}"/>
+            <h:outputText value="#{product.name}"/>
         </h:column>
         <h:column>
-            <h:outputText value="#{orderBean.quantity}"/>
+            <h:outputText value="#{product.quantity}"/>
         </h:column>
         <h:column>
-            <h:commandButton value="Добавить" action="#{orderBean.addThing(thing)}"/>
+            <h:commandButton value="Добавить" action="#{orderBean.addThing(product)}"/>
         </h:column>
         </h:dataTable>
     </h:form>
     <h:dataTable value="#{orderBean.thingInOrder}" var="thing">
         <h:column>
-            <h:outputText value="#{orderBean.name}"/>
+            <h:outputText value="#{thing.name}"/>
         </h:column>
         <h:column>
-            <h:outputText value="#{orderBean.quantity}"/>
+            <h:outputText value="#{thing.quantity}"/>
         </h:column>
 
     </h:dataTable>
